@@ -2,7 +2,6 @@ import React from 'react';
 
 import Button from '../Button';
 
-import Toast from '../Toast';
 
 import styles from './ToastPlayground.module.css';
 import Label from '../Label/Label';
