@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Label({children, variantType, setSelectedVariant, labelId}) {
+function Label({children, variantType, setSelectedVariant, labelId, selectedVariant}) {
 
   return (
     <label htmlFor={labelId}>
@@ -9,6 +9,7 @@ function Label({children, variantType, setSelectedVariant, labelId}) {
         type = "radio"
         name = "variant"
         value = { variantType }
+        checked = { variantType === selectedVariant }
         onChange = { event => {
           setSelectedVariant(event.target.value);
         }} 
