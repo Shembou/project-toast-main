@@ -3,15 +3,11 @@ import React from 'react';
 import Toast from '../Toast';
 import styles from './ToastShelf.module.css';
 
-function ToastShelf({ toasts, setToasts }) {
+import { ToastContext } from '../ToastProvider'
 
-  function filterToasts(id) {
-    const nextToasts = toasts.filter((toast) => {
-      return toast.id !== id;
-    });
+function ToastShelf() {
 
-    setToasts(nextToasts);
-  }
+  const { toasts } = React.useContext(ToastContext);
 
   return (
     <ol className={styles.wrapper}>
@@ -22,7 +18,6 @@ function ToastShelf({ toasts, setToasts }) {
               className={styles.toastWrapper}
               key={toast.id}>
               <Toast selectedVariant={toast.selectedVariant}
-                filterToasts={filterToasts}
                 id={toast.id}
               >
                 {toast.message}
